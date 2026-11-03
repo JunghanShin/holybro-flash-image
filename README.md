@@ -56,7 +56,11 @@ git clone https://github.com/JunghanShin/holybro-flash-image.git
    ```
 6. `Flash finished`가 나오면 전원을 끄고, REC 스위치를 원래 위치로 돌린 뒤 전원을 켭니다.
 
-첫 부팅 때 Ubuntu 초기 설정(사용자 계정 등)이 나옵니다.
+초기 설정 화면 없이 부팅되고 자동 로그인됩니다. 이미지에 사용자 `dev`(비밀번호 `roqkf`)와 JetPack 6.2.2 런타임이 들어 있어 바로 SSH로 접속할 수 있습니다. USB-C로 연결된 상태라면 보드 주소는 `192.168.55.1`입니다.
+
+```bash
+ssh dev@192.168.55.1
+```
 
 ## 작업 폴더
 
