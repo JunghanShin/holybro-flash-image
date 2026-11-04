@@ -16,19 +16,21 @@ holybro-flash-image.sh   (보드 REC 모드, USB 연결)   ← 이 저장소
 |---|---|
 | 모듈 | Jetson Orin NX |
 | 캐리어 보드 | Holybro Pixhawk Jetson Baseboard |
-| 소프트웨어 | JetPack 6.2.2 (L4T r36.5) |
+| 소프트웨어 | JetPack 6.2.2 (L4T 36.5.0) |
 | 설치 위치 | NVMe SSD, 부트로더는 QSPI |
 
 ## 준비
 
 | 항목 | 내용 |
 |---|---|
-| PC | x86_64 Ubuntu 22.04 네이티브 설치. **이미지를 만든 PC와 같은 PC** |
+| Linux | x86_64 Ubuntu 22.04 PC 또는 가상 머신 (VirtualBox, VMware). **이미지를 만든 환경과 같은 곳** (작업 폴더가 있어야 함) |
 | 권한 | `sudo` (스크립트가 스스로 `sudo`로 다시 실행) |
 | 이미지 | `holybro-build-image.sh`로 만든 작업 폴더 |
 | 케이블 | PC와 캐리어 보드 USB-C 포트를 잇는 데이터 케이블 |
 
-WSL2와 가상 머신은 USB 복구 장치 연결이 끊기기 쉬워 쓰지 않습니다.
+가상 머신에서 플래시하려면 USB 설정이 필요합니다. 플래시 중에 보드가 USB 장치로 두 번 나타나기 때문에, NVIDIA 장치(Vendor ID `0955`)가 항상 가상 머신으로 자동 연결되게 해야 합니다. 설정 방법은 [holybro-build-image README의 가상 머신 절](https://github.com/JunghanShin/holybro-build-image#가상-머신-virtualbox-vmware)에 있습니다.
+
+WSL2는 USB 장치가 재연결될 때 자동으로 넘겨지지 않아 쓰지 않습니다.
 
 ## 설치
 
@@ -93,4 +95,5 @@ ssh dev@192.168.55.1
 
 ## 상태
 
-- 실제 Linux PC에서 이 버전(작업 폴더 옵션)을 아직 실행해 보지 않았습니다.
+- Ubuntu 22.04 PC에서 플래시를 확인했습니다(`Flash successful`).
+- 가상 머신(VirtualBox, VMware)에서는 아직 시험하지 않았습니다.
