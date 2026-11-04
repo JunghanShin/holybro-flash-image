@@ -58,7 +58,7 @@ git clone https://github.com/JunghanShin/holybro-flash-image.git
    ```
 6. `Flash finished`가 나오면 전원을 끄고, REC 스위치를 원래 위치로 돌린 뒤 전원을 켭니다.
 
-초기 설정 화면 없이 부팅되고 자동 로그인됩니다. 이미지에 사용자 `dev`(비밀번호 `roqkf`)와 JetPack 6.2.2 런타임이 들어 있어 바로 SSH로 접속할 수 있습니다. USB-C로 연결된 상태라면 보드 주소는 `192.168.55.1`입니다.
+초기 설정 화면 없이 부팅되고 자동 로그인됩니다. 이미지에 사용자 `dev`(비밀번호 `roqkf`)와 JetPack 6.2.2 런타임이 들어 있어 바로 SSH로 접속할 수 있습니다. 플래시할 때 쓴 USB-C 케이블을 그대로 두면 USB 원격으로 접속할 수 있고, 보드 주소는 `192.168.55.1`입니다. 부팅 후 1분쯤 기다립니다. USB 원격은 보드에서 `sudo usb-role on|off`로 켜고 끕니다(기본 켜짐).
 
 ```bash
 ssh dev@192.168.55.1
